@@ -1,0 +1,33 @@
+#title {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.boxes{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(18, 160, 255);
+    border: 1px solid rgb(18, 160, 255);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+}
+.boxes:hover {
+  background-color: rgb(0, 255, 98);  
+  cursor: pointer;
+  border: none;
+}
+/*  
+.txt{
+    display: none;
+}  */
+
+
+.content{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: center;
+    grid-gap: 20px;
+}

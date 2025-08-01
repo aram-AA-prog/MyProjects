@@ -1,0 +1,28 @@
+body {
+    background-image: url("https://www.shutterstock.com/shutterstock/photos/1722883588/display_1500/stock-vector-neon-quiz-sign-vector-design-template-quiz-neon-frame-light-banner-design-element-colorful-modern-1722883588.jpg");
+    background-size: cover;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.mas1 {
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#start {
+    width: 500px;
+    height: 70px;
+    border: 1px solid rgb(23, 0, 234);
+    text-align: center;
+    padding-top: 30px;
+    border-radius: 50px;
+    background-color: rgb(23, 0, 234);
+    color: rgb(230, 166, 47);
+}
+
+.mas2 {
+    display: flex;
+    justify-content: center;
+}

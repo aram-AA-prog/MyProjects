@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.main {
+    position: relative;
+    max-width: 600px;
+    margin: 30px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input {
+    height: 35px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: 10px;
+    padding-left: 15px;
+    font-size: 12px;
+}
+
+.inputs {
+    padding-top: 10px;
+    display: grid;
+    grid-template-columns: 500px;
+    grid-gap: 10px;
+}
+
+.btnDiv {
+    padding-top: 10px;
+}
+
+button {
+    width: 100px;
+    height: 35px;
+    border: none;
+    background-color: rgb(16, 208, 124);
+    color: white;
+}
+
+#icon {
+    position: absolute;
+    left: 78%;
+    top: 47%;
+    cursor: pointer;
+}
+
+.list {
+    border: 1px solid;
+    padding: 5px;
+    display: none;
+}
+
+.list p {
+    border: 0.5px solid rgb(217, 217, 217);
+    padding: 5px;
+}
+
+.list p:hover {
+    cursor: pointer;
+    background-color: rgb(191, 191, 191);
+}
+
+.tasks {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: auto auto auto;
+}
+
+.patDiv {
+    position: relative;
+    margin: 20px;
+    width: 600px;
+    height: 300px;
+    border-radius: 20px;
+    background-color: rgb(245, 245, 245);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.patDiv p{
+    padding: 10px;
+}
+
+.settings{
+    position: absolute;
+    display: flex;
+    bottom: 30px;
+    right:  150px;
+}
+
+.settings p {
+    border: 1px solid black;
+    margin: 5px;
+}
+
+
+
+.settings p:hover {
+    background-color: rgb(205, 205, 205);
+    cursor: pointer;
+}

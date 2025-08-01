@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script defer src="./script.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+        <div class="content">
+            <div class="inputDiv">    
+                <h1>💸 Expense Tracker</h1>
+                <input type="text" name="name" id="name" placeholder="Անուն" required>
+                <input type="number" name="name" id="price" placeholder="Գումար" require>
+                <div class="select">
+                    <input type="text" name="name" id="vijak" placeholder="Ծախս կամ Շահույթ" require>
+                    <i style="font-size:16px" class="fa" id="icon">&#xf107;</i>
+                </div>    
+                <div class="selTxT">
+                    <p>Ծախս</p>
+                    <p>Շահույթ</p>
+                </div>
+                
+                <button id="addBtn">Ավելացնել</button>
+            </div>    
+            <div class="display">
+                <p id="shah">Շահույթ: 0 ֏</p>
+                <p id="caxs">Ծախս: 0 ֏</p>
+                <p id="mnacord">Մնացորդ: 0 ֏</p>
+            </div>    
+            <div class="tracker">
+                <canvas id="myCanvas" height="400px" width="500px"></canvas>
+                <button id="deletBtn">Ջնջել ամբողջությամբ</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

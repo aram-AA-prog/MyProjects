@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana;
+}
+
+
+.content {
+    width: 600px;
+    height: 100%;
+    margin: 30px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.3);
+    display: grid;
+    grid-gap: 35px;
+    position: relative;
+}
+
+.display p {
+    padding-top: 10px;
+    font-weight: 600;
+}
+
+.select {
+    position: relative;
+}
+
+input {
+    width: 600px;
+    height: 40px;
+}
+
+button {
+    width: 600px;
+    height: 40px;
+}
+
+.select input {
+    width: 600px;
+}
+
+.selTxT {
+    font-weight: 600;
+    font-size: 14px;
+    display: none;
+}
+
+.selTxT p{
+    width: 200px;
+    text-align: center;
+    height: 25px;
+    border: 1px solid rgb(209, 209, 209);
+}
+
+.selTxT p:hover {
+    cursor: pointer;
+    background-color: rgb(209, 208, 208);
+}
+
+#icon {
+    position: absolute;
+    left: 93%;
+    font-size: 20px;
+    font-weight: 700;
+    top: 30%;
+    cursor: pointer;
+}
+
+.inputDiv {
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap: 10px;
+}

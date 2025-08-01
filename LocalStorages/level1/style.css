@@ -1,0 +1,13 @@
+.main{
+    text-align: center;
+}
+
+input{
+    width: 200px;
+    height: 35px;
+}
+
+button{
+    width: 100px;
+    height: 40px;
+}

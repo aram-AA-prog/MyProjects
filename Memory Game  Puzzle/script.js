@@ -1,6 +1,6 @@
 window.addEventListener("DOMContentLoaded", function () {
     const emojis = ["🍎", "🍌", "🍇", "🍓", "🍒", "🍉", "🍍", "🥝"];
-    const cards = [...emojis, ...emojis];
+    const cards = [...emojis, ...emojis.reverse()];
 
     let content = document.querySelector(".content")
 

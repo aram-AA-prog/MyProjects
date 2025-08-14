@@ -1,7 +1,7 @@
 let displayTxt = document.querySelector("#displayTxT")
 let numDiv = document.querySelectorAll(".numbers button")
 let clearBtn = document.querySelector("#clear")
-let tokos = document.querySelector("#tokos")
+let  percentage = document.querySelector("#tokos")
 let bajan = document.querySelector("#bajanac")
 let angam = document.querySelector("#angam")
 let res = document.querySelector("#havasar")
@@ -28,85 +28,77 @@ clearBtn.addEventListener("click", function () {
 
 
 
-tokos.addEventListener("click", function () {
+ percentage.addEventListener("click", function () {
+    if (display === "" || display.slice(-1) ===  percentage.textContent) {
+        return;
+    }
     display += tokos.textContent
     displayTxt.textContent = tokos.textContent
 })
 
 bajan.addEventListener("click", function () {
+    if (display === "" || display.slice(-1) === bajan.textContent) {
+        return;
+    }
     display += bajan.textContent
     displayTxt.textContent = bajan.textContent
 })
 
 angam.addEventListener("click", function () {
+    if (display === "" || display.slice(-1) === angam.textContent) {
+        return;
+    }
     display += angam.textContent
     displayTxt.textContent = angam.textContent
 })
 
 plyus.addEventListener("click", function () {
+    if (display === "" || display.slice(-1) === plyus.textContent) {
+        return;
+    }
     display += plyus.textContent
     displayTxt.textContent = plyus.textContent
 })
 
 minus.addEventListener("click", function () {
+    if (display === "" || display.slice(-1) === minus.textContent) {
+        return;
+    }
     display += minus.textContent
     displayTxt.textContent = minus.textContent
 })
 
-let mas1;
-let mas2;
+
 
 res.addEventListener("click", function () {
-    for (let i = 0; i < display.length; i++) {
-        let tokosSearch = tokos.textContent
-        let tokosI = display.indexOf(tokosSearch)
 
-        let bajanSearch = bajan.textContent
-        let bajanI = display.indexOf(bajanSearch)
+    let numbers = /\d+/g;
+    let operator = /[+\-*/%]/g;
+    let hasOp = display.match(operator)
+    let hasNum = display.match(numbers).map(Number)
+    let result = Number(hasNum[0])
 
-        let angamSearch = angam.textContent
-        let angamI = display.indexOf(angamSearch)
+    for (let i = 0; i < hasOp.length; i++) {
+        let nextNum = hasNum[i + 1]
 
-        let plyusSearch = plyus.textContent
-        let plyusI = display.indexOf(plyusSearch)
+        if (!hasOp || !hasNum) return
 
-        let minusSearch = minus.textContent
-        let minusI = display.indexOf(minusSearch)
-
-        if (display[i] == "%") {
-            mas1 = display.slice(0, tokosI)
-            mas2 = display.slice(tokosI + 1, display.length)
-            display = (Number(mas1) * Number(mas2)) / 100
-            displayTxt.textContent = (Number(mas1) * Number(mas2)) / 100
-
-        } else if (display[i] == "/") {
-            mas1 = display.slice(0, bajanI)
-            mas2 = display.slice(bajanI + 1, display.length)
-            display = Number(mas1) / Number(mas2)
-            displayTxt.textContent = Number(mas1) / Number(mas2)
-
-        } else if (display[i] == "*") {
-            mas1 = display.slice(0, angamI)
-            mas2 = display.slice(angamI + 1, display.length)
-            display = Number(mas1) * Number(mas2)
-            displayTxt.textContent = Number(mas1) * Number(mas2)
-        } else if (display[i] == "+") {
-            mas1 = display.slice(0, plyusI)
-            mas2 = display.slice(plyusI + 1, display.length)
-            display = Number(mas1) + Number(mas2)
-            displayTxt.textContent = Number(mas1) + Number(mas2)
-        } else if (display[i] == "-") {
-            mas1 = display.slice(0, minusI)
-            mas2 = display.slice(minusI + 1, display.length)
-            display = Number(mas1) - Number(mas2)
-            displayTxt.textContent = Number(mas1) - Number(mas2)
+        if (hasOp[i] === "+") {
+            result += nextNum
+        } else if (hasOp[i] === "-") {
+            result -= nextNum
+        } else if (hasOp[i] === "*") {
+            result *= nextNum
+        } else if (hasOp[i] === "/") {
+            result /= nextNum
+        } else if (hasOp[i] === "%") {
+            result = (hasNum[i] * hasNum[i + 1]) / 100
         }
-
     }
+
+    display = result
+    displayTxt.textContent = result
 })
-
-
-
 
 
 

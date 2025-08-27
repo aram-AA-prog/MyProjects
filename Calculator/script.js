@@ -1,15 +1,19 @@
 let displayTxt = document.querySelector("#displayTxT")
 let numDiv = document.querySelectorAll(".numbers button")
 let clearBtn = document.querySelector("#clear")
-let  percentage = document.querySelector("#tokos")
+let percentage = document.querySelector("#tokos")
 let bajan = document.querySelector("#bajanac")
 let angam = document.querySelector("#angam")
 let res = document.querySelector("#havasar")
 let plyus = document.querySelector("#plyus")
 let minus = document.querySelector("#minus")
+let story = document.querySelector("#story")
+let secretDiv = document.querySelector(".secret")
+let closeIcon = document.querySelector("#close")
 let display = ""
 
 
+let save = JSON.parse(localStorage.getItem("story")) || []
 numDiv.forEach(btn => {
     btn.addEventListener("click", function () {
         if (btn.textContent !== "=") {
@@ -23,17 +27,18 @@ numDiv.forEach(btn => {
 
 clearBtn.addEventListener("click", function () {
     displayTxt.textContent = displayTxt.textContent.slice(0, -1);
-    display = ""
+    display = display.slice(0, -1)
 });
 
 
 
- percentage.addEventListener("click", function () {
-    if (display === "" || display.slice(-1) ===  percentage.textContent) {
+percentage.addEventListener("click", function () {
+    if (display === "" || display.slice(-1) === percentage.textContent) {
         return;
     }
-    display += tokos.textContent
-    displayTxt.textContent = tokos.textContent
+    display += percentage.textContent
+    displayTxt.textContent = percentage.textContent
+    
 })
 
 bajan.addEventListener("click", function () {
@@ -69,36 +74,31 @@ minus.addEventListener("click", function () {
 })
 
 
-
 res.addEventListener("click", function () {
+    save.push(`${displayTxt.textContent} = ${eval(display)}`)
+    display = eval(display);
+    displayTxt.textContent = display;
+    localStorage.setItem("story", JSON.stringify(save))
 
-    let numbers = /\d+/g;
-    let operator = /[+\-*/%]/g;
-    let hasOp = display.match(operator)
-    let hasNum = display.match(numbers).map(Number)
-    let result = Number(hasNum[0])
-
-    for (let i = 0; i < hasOp.length; i++) {
-        let nextNum = hasNum[i + 1]
-
-        if (!hasOp || !hasNum) return
-
-        if (hasOp[i] === "+") {
-            result += nextNum
-        } else if (hasOp[i] === "-") {
-            result -= nextNum
-        } else if (hasOp[i] === "*") {
-            result *= nextNum
-        } else if (hasOp[i] === "/") {
-            result /= nextNum
-        } else if (hasOp[i] === "%") {
-            result = (hasNum[i] * hasNum[i + 1]) / 100
-        }
+    secretDiv.innerHTML = ""
+    for (let i = 0; i < save.length; i++) {
+        let pCont = document.createElement("p")
+        pCont.innerText = save[i]
+        secretDiv.appendChild(pCont)
+        secretDiv.appendChild(closeIcon)
+        localStorage.removeItem("story")
     }
+});
 
-    display = result
-    displayTxt.textContent = result
+story.addEventListener("click", function () {
+    secretDiv.style.display = "block"
+    story.style.display = "none"
 })
 
+
+closeIcon.addEventListener("click", function () {
+    secretDiv.style.display = "none"
+    story.style.display = "block"
+})
 
 

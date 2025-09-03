@@ -1,6 +1,8 @@
 * {
     margin: 0;
     padding: 0;
+    background-color: black;
+
 }
 
 .main {
@@ -13,13 +15,28 @@
     z-index: 1;
 }
 
-.secret{
+.secret {
     display: none;
-    position: absolute;
+    position: absolute;  
     width: 80%;
     height: 50%;
-    background-color: rgba(226, 226, 226,0.9);
+    background-color: rgba(226, 226, 226, 0.9);
     z-index: 2;
+}
+
+#close {
+    position: absolute;     
+    right: 10px;
+    top: 2px;   
+    font-size: 2em;
+    cursor: pointer;
+    background-color: rgba(209, 207, 207, 0.3);
+}
+
+
+.secret p{
+    font-size: 20px;
+    padding-left: 20px;
 }
 
 .container {
@@ -28,16 +45,46 @@
     border: 1px solid;
     display: grid;
     grid-template-columns: auto;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 100px rgba(255, 255, 255, 0.3);
     border: none;
     border-radius: 10px;
 }
 
-#story{
+#clear{
+    width: 300px;
+}
+
+/* #close{
+    width: 28px;
+    background-color: rgba(209, 207, 207, 0.3);
+    font-size: 2em;
+    position: absolute;
+    right: 30px;
+    cursor: pointer;
+} */
+
+.fas:hover{
+    background-color: rgb(229, 163, 40);
+}
+
+#story {
     position: absolute;
     bottom: 200px;
     left: 630px;
     z-index: 2;
+}
+
+.gorc {
+    display: grid;
+    grid-template-columns: 69px 69px 69px 69px 69px auto;
+}
+
+.gorc button{
+    background-color: rgb(199, 129, 0);
+}
+
+.gorc button:hover{
+    background-color: rgb(229, 163, 40);
 }
 
 .display {
@@ -46,6 +93,9 @@
     border-bottom: 1px solid;
     font-size: 50px;
     display: flex;
+
+    background-color: black;
+    color: white;
     justify-content: flex-end;
     align-items: center;
     position: relative;
@@ -57,16 +107,18 @@
 }
 
 button {
-    width: 70px;
-    height: 70px;
-    border: none;
+    width: 69px;
+    height: 69px;
     background-color: white;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+    background-color: rgb(72, 69, 69);
+    color: white;
+    border: 1px solid rgb(165, 165, 165);
 }
 
 button:hover {
     cursor: pointer;
-    background: rgb(238, 238, 238);
+    background: rgb(84, 84, 84);
 }
 
 .num {
@@ -80,6 +132,5 @@ button:hover {
 }
 
 #havasar {
-    width: 250px;
-    grid-column: span 2;
+    width: 125px;
 }

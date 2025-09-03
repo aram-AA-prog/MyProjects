@@ -9,7 +9,9 @@ let plyus = document.querySelector("#plyus")
 let minus = document.querySelector("#minus")
 let story = document.querySelector("#story")
 let secretDiv = document.querySelector(".secret")
+let secretPtag = document.querySelector(".secretPtag")
 let closeIcon = document.querySelector("#close")
+let operators = document.querySelectorAll(".gorc button")
 let display = ""
 
 
@@ -32,45 +34,15 @@ clearBtn.addEventListener("click", function () {
 
 
 
-percentage.addEventListener("click", function () {
-    if (display === "" || display.slice(-1) === percentage.textContent) {
-        return;
-    }
-    display += percentage.textContent
-    displayTxt.textContent = percentage.textContent
-    
-})
+operators.forEach(op => {
+    op.addEventListener("click", function () {
+        if (display === "" || display.slice(-1) === op.textContent) {
+            return;
+        }
+        display += op.textContent
+        displayTxt.textContent = op.textContent
 
-bajan.addEventListener("click", function () {
-    if (display === "" || display.slice(-1) === bajan.textContent) {
-        return;
-    }
-    display += bajan.textContent
-    displayTxt.textContent = bajan.textContent
-})
-
-angam.addEventListener("click", function () {
-    if (display === "" || display.slice(-1) === angam.textContent) {
-        return;
-    }
-    display += angam.textContent
-    displayTxt.textContent = angam.textContent
-})
-
-plyus.addEventListener("click", function () {
-    if (display === "" || display.slice(-1) === plyus.textContent) {
-        return;
-    }
-    display += plyus.textContent
-    displayTxt.textContent = plyus.textContent
-})
-
-minus.addEventListener("click", function () {
-    if (display === "" || display.slice(-1) === minus.textContent) {
-        return;
-    }
-    display += minus.textContent
-    displayTxt.textContent = minus.textContent
+    })
 })
 
 
@@ -80,11 +52,12 @@ res.addEventListener("click", function () {
     displayTxt.textContent = display;
     localStorage.setItem("story", JSON.stringify(save))
 
-    secretDiv.innerHTML = ""
+    secretPtag.innerHTML = ""
     for (let i = 0; i < save.length; i++) {
         let pCont = document.createElement("p")
+        pCont.style.backgroundColor = "rgba(226, 226, 226, 0.9"
         pCont.innerText = save[i]
-        secretDiv.appendChild(pCont)
+        secretPtag.appendChild(pCont)
         secretDiv.appendChild(closeIcon)
         localStorage.removeItem("story")
     }

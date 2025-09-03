@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,14 +9,20 @@
     <link rel="stylesheet" href="./style.css">
     <title>Document</title>
 </head>
+
 <body>
     <div class="main">
         <div class="secret">
-            <span id="close" style="font-size: 2em; text-align: end; margin-right: 30px; cursor: pointer;">&times;</span>
+            <div class="close_div">
+                <p id="close">&times;</p>
+            </div>
+            <div class="secretPtag">
+
+            </div>
         </div>
         <div class="container">
             <div class="display">
-                <p id="displayTxT">0</p>                
+                <p id="displayTxT">0</p>
             </div>
             <div class="butons">
                 <div class="gorc">
@@ -24,7 +31,8 @@
                     <button id="angam">*</button>
                     <button id="plyus">+</button>
                     <button id="minus">-</button>
-                    <button id="clear" style="width: 129px;"><i class="fas fa-arrow-left"></i></button>
+                    <button id="clear" style="width: 155px;"><i style="background-color: rgb(199, 129, 0);  "
+                            class="fas fa-arrow-left"></i></button>
                 </div>
                 <div class="numbers">
                     <button class="num">1</button>
@@ -37,11 +45,13 @@
                     <button class="num">8</button>
                     <button class="num">9</button>
                     <button class="num">0</button>
-                    <button class="num" id="havasar">=</button>
+                    <button class="num" style="font-size: 2em;">.</button>
+                    <button class="num" id="havasar" style="font-size: 20px;">=</button>
                 </div>
             </div>
         </div>
     </div>
     <button id="story">story</button>
 </body>
+
 </html>
